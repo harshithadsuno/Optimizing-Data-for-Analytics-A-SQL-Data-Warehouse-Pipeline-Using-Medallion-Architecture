@@ -2,7 +2,7 @@
 # Optimizing Data for Analytics: A SQL Data Warehouse Using Medallion Architecture
 
 This project demonstrates a comprehensive data warehousing and analytics solution, from building a data warehouse to generating actionable insights. Here's the raw data!
-![Data Model](docs/Data_Integration.png)
+![Data](docs/Data_Integration.png)
 
 The data architecture for this project follows Medallion Architecture **Bronze**, **Silver**, and **Gold** layers:
 
@@ -10,7 +10,7 @@ The data architecture for this project follows Medallion Architecture **Bronze**
 2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis.
 3. **Gold Layer**: Houses business-ready data modeled into a star schema required for reporting and analytics.
 
-![Data Architecture](docs/Data_Flow.png)
+![Data Flow](docs/Data_Flow.png)
 
 ---
 ## 📖 Project Overview
@@ -21,3 +21,5 @@ This project involves:
 2. **ETL Pipelines**: Extracting, transforming, and loading data from source systems into the warehouse.
 3. **Data Modeling**: Developing fact and dimension tables optimized for analytical queries.
 4. **Analytics & Reporting**: Creating SQL-based reports and dashboards for actionable insights.
+
+![Data Model](docs/Data_Model.png)
