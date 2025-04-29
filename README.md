@@ -4,16 +4,18 @@ This project implements a full-stack data warehousing pipeline using the **Medal
 
 ---
 
+
 ## 📊 Architecture Overview
 
 ### 🔁 Data Flow
-![Data Flow](Data_Flow.png)
+![Data Flow](docs/Data_Flow.png)
 
 ### 🔗 Data Integration Design
-![Data Integration](Data_Integration.png)
+![Data Integration](docs/Data_Integration.png)
 
 ### 🧱 Dimensional Data Model
-![Data Model](Data_Model.png)
+![Data Model](docs/Data_Model.png)
+
 
 ---
 
