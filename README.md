@@ -1,43 +1,87 @@
+# Data Warehouse Project: CPG Sales Analytics using Medallion Architecture
 
-# Optimizing Data for Analytics: A SQL Data Warehouse & Pipeline Using Medallion Architecture
-
-This project demonstrates a comprehensive data warehousing and analytics solution, from building a data warehouse to Analytics-Ready Insights. Here's a sneak peak of the raw data!
-![Data](docs/Data_Integration.png)
-
-The data architecture for this project follows Medallion Architecture **Bronze**, **Silver**, and **Gold** layers:
-
-1. **Bronze Layer**: Stores raw data as-is from the source systems. Data is ingested from CSV Files into SQL Server Database.
-2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis.
-3. **Gold Layer**: Houses business-ready data modeled into a star schema required for reporting and analytics.
-
-![Data Flow](docs/Data_Flow.png)
+This project implements a full-stack data warehousing pipeline using the **Medallion Architecture** (Bronze → Silver → Gold) to transform and model raw CPG (Consumer Packaged Goods) datasets into an analytics-ready format. The pipeline was built using SQL scripts to ingest, clean, integrate, and organize data across multiple business entities.
 
 ---
-## 📖 Project Overview
 
-This project involves:
+## 📊 Architecture Overview
 
-1. **Data Architecture**: Designing a Modern Data Warehouse Using Medallion Architecture **Bronze**, **Silver**, and **Gold** layers.
-2. **ETL Pipelines**: Extracting, transforming, and loading data from source systems into the warehouse.
-3. **Data Modeling**: Developing fact and dimension tables optimized for analytical queries.
+### 🔁 Data Flow
+![Data Flow](Data_Flow.png)
 
+### 🔗 Data Integration Design
+![Data Integration](Data_Integration.png)
 
-#### Objective
-Develop a modern data warehouse using SQL Server to consolidate sales data, enabling analytical reporting and informed decision-making.
+### 🧱 Dimensional Data Model
+![Data Model](Data_Model.png)
 
-#### Specifications
-- **Data Sources**: Import data from two source systems (ERP and CRM) provided as CSV files.
-- **Data Quality**: Cleanse and resolve data quality issues prior to analysis.
-- **Integration**: Combine both sources into a single, user-friendly data model designed for analytical queries.
-- **Scope**: Focus on the latest dataset only; historization of data is not required.
-- **Documentation**: Provide clear documentation of the data model to support both business stakeholders and analytics teams.
+---
 
-## 📜 SQL Scripts
+## 🗂️ Layered Structure
 
-Stored procedures and schema definitions for each layer:
+### 🔸 Bronze Layer – Raw Ingestion
+Files:
+- `bronze.crm_cust_info.csv`
+- `bronze.crm_sales_details.csv`
+- `bronze.crm_prd_info.csv`
+- `bronze.erp_loc_a101.csv`
+- `bronze.erp_cust_az12.csv`
+- `bronze.erp_px_cat_g1v2.csv`
 
-- **Bronze Layer**: `bronze_ddl.sql`, `proc_load_bronze.sql`
-- **Silver Layer**: `silver_ddl.sql`, `proc_load_silver.sql`
-- **Gold Layer**: `gold_products.sql`, `gold_sales.sql`, `gold_customers.sql`
+### 🔹 Silver Layer – Cleaned & Standardized
+Files:
+- `silver.crm_cust_info.csv`
+- `silver.crm_sales_details.csv`
+- `silver.crm_prd_info.csv`
+- `silver.erp_loc_a101.csv`
+- `silver.erp_cust_az12.csv`
+- `silver.erp_px_cat_g1v2.csv`
 
-![Data Model](docs/Data_Model.png)
+### 🏅 Gold Layer – Analytics-Ready
+Files:
+- `gold.dim_customers.csv`
+- `gold.dim_products.csv`
+- `gold.fact_sales.csv`
+- `gold.report_customers.csv`
+- `gold.report_products.csv`
+
+---
+
+## ⚙️ How to Run
+
+1. Run `init_database.sql` to initialize the schema.
+2. Execute DDL scripts for each layer:
+   - `bronze_ddl.sql`
+   - `silver_ddl.sql`
+3. Load data using procedures:
+   - `proc_load_bronze.sql`
+   - `proc_load_silver.sql`
+4. Execute gold layer transformations:
+   - `gold_cust.sql`
+   - `gold_products.sql`
+   - `gold_sles.sql`
+
+---
+
+## ✅ Outcomes
+
+- Clean dimensional model for sales analysis
+- Unified customer and product entities across systems
+- Ready-to-analyze fact and report tables
+- Foundation for advanced analytics (used in a follow-up project)
+
+---
+
+## 🧠 Skills Demonstrated
+
+- SQL DDL & DML Scripting
+- ETL Architecture (Medallion)
+- Data Cleaning & Transformation
+- Relational Modeling & Star Schema Design
+- Procedural SQL (Stored Procedures)
+- End-to-End Data Warehousing Workflow
+
+---
+
+> 🚀 This project sets the stage for advanced analytics built on top of a solid data foundation. Follow-up analysis available in the [Advanced SQL Analytics Project](#).
+
