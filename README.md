@@ -85,5 +85,5 @@ Files:
 
 ---
 
-> 🚀 This project sets the stage for advanced analytics built on top of a solid data foundation. Follow-up analysis available in the [Advanced SQL Analytics Project](#).
+> 🚀 This project sets the stage for advanced analytics built on top of a solid data foundation. Follow-up analysis available in the [[Advanced SQL Analytics Project](#)](https://github.com/harshithadsuno/SQL-Advanced-Data-Analytics-Project.git).
 
